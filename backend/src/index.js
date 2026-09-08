@@ -5,6 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import productsRouter from "./routes/products.js";
 import searchRouter from "./routes/search.js";
+import authRouter from "./routes/auth.js";
 import { embeddingProviderName } from "./services/embeddings.js";
 import { getCatalog } from "./data/productStore.js";
 
@@ -20,6 +21,7 @@ app.get("/api/health", (req, res) => {
   res.json({ ok: true, embeddingProvider: embeddingProviderName() });
 });
 
+app.use("/api/auth", authRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/search", searchRouter);
 

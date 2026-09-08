@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { NavLink, Route, Routes, Link, useNavigate } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
 import { ToastProvider } from "./context/ToastContext";
+import { AuthProvider } from "./context/AuthContext";
 import { useCart } from "./context/CartContext";
 import { useWishlist } from "./context/WishlistContext";
+import { useAuth } from "./context/AuthContext";
+import { useToast } from "./context/ToastContext";
 import CartDrawer from "./components/CartDrawer";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import ProductDetail from "./pages/ProductDetail";
 import Wishlist from "./pages/Wishlist";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 /* ── SVG Icons ── */
 const IconSearch = () => (
@@ -46,7 +51,57 @@ const IconClose = () => (
   </svg>
 );
 
-/* ── Inner shell (needs context access) ── */
+/* ── User dropdown menu ── */
+function UserMenu() {
+  const { user, logout, isLoggedIn } = useAuth();
+  const { show } = useToast();
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handler = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  if (!isLoggedIn) {
+    return (
+      <Link to="/login" className="nav-icon-btn" title="Sign in">
+        <IconUser />
+      </Link>
+    );
+  }
+
+  return (
+    <div className="user-menu-wrap" ref={ref}>
+      <button className="nav-icon-btn user-menu-trigger" onClick={() => setOpen((v) => !v)} title="Account">
+        <span className="user-avatar">{user.name.charAt(0).toUpperCase()}</span>
+      </button>
+      {open && (
+        <div className="user-dropdown">
+          <div className="user-dropdown__info">
+            <p className="user-dropdown__name">{user.name}</p>
+            <p className="user-dropdown__email">{user.email}</p>
+          </div>
+          <div className="user-dropdown__divider" />
+          <Link to="/wishlist" className="user-dropdown__item" onClick={() => setOpen(false)}>Saved Items</Link>
+          <a href="#" className="user-dropdown__item">My Orders</a>
+          <a href="#" className="user-dropdown__item">Account Settings</a>
+          <div className="user-dropdown__divider" />
+          <button
+            className="user-dropdown__item user-dropdown__item--red"
+            onClick={() => { logout(); show("Signed out successfully", "default"); navigate("/"); setOpen(false); }}
+          >
+            Sign out
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ── Main Shell ── */
 function Shell() {
   const { totalItems } = useCart();
   const { count: wishlistCount } = useWishlist();
@@ -88,9 +143,7 @@ function Shell() {
             <button className="nav-icon-btn" title="Search" onClick={() => setSearchOpen((v) => !v)}>
               <IconSearch />
             </button>
-            <button className="nav-icon-btn" title="Account">
-              <IconUser />
-            </button>
+            <UserMenu />
             <Link to="/wishlist" className="nav-icon-btn nav-icon-btn--badge" title="Wishlist">
               <IconHeart />
               {wishlistCount > 0 && <span className="nav-badge">{wishlistCount}</span>}
@@ -102,7 +155,6 @@ function Shell() {
           </div>
         </div>
 
-        {/* Search bar */}
         {searchOpen && (
           <div className="nav-search-bar">
             <form onSubmit={handleSearchSubmit} className="nav-search-form">
@@ -131,6 +183,8 @@ function Shell() {
           <Route path="/accessories" element={<Home defaultCategory="hat" />} />
           <Route path="/search" element={<Search />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </main>
@@ -174,12 +228,14 @@ function Shell() {
 
 export default function App() {
   return (
-    <CartProvider>
-      <WishlistProvider>
-        <ToastProvider>
-          <Shell />
-        </ToastProvider>
-      </WishlistProvider>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <WishlistProvider>
+          <ToastProvider>
+            <Shell />
+          </ToastProvider>
+        </WishlistProvider>
+      </CartProvider>
+    </AuthProvider>
   );
 }
