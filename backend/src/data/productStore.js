@@ -8,7 +8,8 @@ const PRODUCTS_PATH = path.join(__dirname, "products.json");
 const CACHE_PATH = path.join(__dirname, "embeddings.cache.json");
 const PUBLIC_DIR = path.join(__dirname, "..", "..", "public");
 
-let cachedCatalog = null; // in-memory: [{ ...product, embedding }]
+let cachedEmbeddings = null;  // { provider, byId: { [id]: Float32Array } }
+let cachedCatalog    = null;  // kept only for the boot warm-up path
 
 async function loadProducts() {
   const raw = await fs.readFile(PRODUCTS_PATH, "utf-8");
@@ -35,36 +36,48 @@ async function saveEmbeddingCache(cache) {
  * the cache is invalidated and recomputed so query and catalog vectors are
  * always comparable.
  */
-export async function getCatalog() {
-  if (cachedCatalog) return cachedCatalog;
-
-  const products = await loadProducts();
+async function ensureEmbeddings(products) {
   const provider = embeddingProviderName();
-  const cache = await loadEmbeddingCache();
 
-  const cacheIsValid =
-    cache &&
-    cache.provider === provider &&
-    cache.embeddings &&
-    products.every((p) => Array.isArray(cache.embeddings[p.id]));
+  if (cachedEmbeddings && cachedEmbeddings.provider === provider) {
+    // Check if any new products are missing embeddings
+    const missing = products.filter((p) => !cachedEmbeddings.byId[p.id] && !p.imageUrl.startsWith("http"));
+    if (missing.length === 0) return cachedEmbeddings.byId;
+  }
 
-  const embeddingsById = {};
+  const diskCache = await loadEmbeddingCache();
+  const diskValid =
+    diskCache &&
+    diskCache.provider === provider &&
+    diskCache.embeddings &&
+    products.every((p) => p.imageUrl.startsWith("http") || Array.isArray(diskCache.embeddings[p.id]));
 
-  if (cacheIsValid) {
-    Object.assign(embeddingsById, cache.embeddings);
+  const byId = {};
+
+  if (diskValid) {
+    Object.assign(byId, diskCache.embeddings);
     console.log(`[productStore] Loaded ${products.length} cached embeddings (provider=${provider})`);
   } else {
     console.log(`[productStore] Computing embeddings for ${products.length} products (provider=${provider})...`);
     for (const product of products) {
+      if (product.imageUrl.startsWith("http")) continue; // skip remote URLs
       const imagePath = path.join(PUBLIC_DIR, product.imageUrl.replace(/^\//, ""));
       const buffer = await fs.readFile(imagePath);
-      embeddingsById[product.id] = await embedImage(buffer, "image/png");
+      byId[product.id] = await embedImage(buffer, "image/png");
     }
-    await saveEmbeddingCache({ provider, embeddings: embeddingsById });
+    await saveEmbeddingCache({ provider, embeddings: byId });
     console.log("[productStore] Embeddings computed and cached to disk.");
   }
 
-  cachedCatalog = products.map((p) => ({ ...p, embedding: embeddingsById[p.id] }));
+  cachedEmbeddings = { provider, byId };
+  return byId;
+}
+
+export async function getCatalog() {
+  // Always read fresh product metadata from disk so edits take effect immediately.
+  const products = await loadProducts();
+  const embeddingsById = await ensureEmbeddings(products);
+  cachedCatalog = products.map((p) => ({ ...p, embedding: embeddingsById[p.id] || null }));
   return cachedCatalog;
 }
 
