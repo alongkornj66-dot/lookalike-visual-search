@@ -15,6 +15,12 @@ import ProductDetail from "./pages/ProductDetail";
 import Wishlist from "./pages/Wishlist";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Checkout from "./pages/Checkout";
+import AccountOverview from "./pages/account/Overview";
+import Profile from "./pages/account/Profile";
+import Orders from "./pages/account/Orders";
+import Addresses from "./pages/account/Addresses";
+import ChangePassword from "./pages/account/ChangePassword";
 
 /* ── SVG Icons ── */
 const IconSearch = () => (
@@ -121,10 +127,6 @@ function Shell() {
 
   return (
     <div className="app-shell">
-      <div className="announcement-bar">
-        Complimentary standard shipping on orders over ฿2,000 &middot; Free returns
-      </div>
-
       <header className="top-nav">
         <div className="nav-main">
           <nav className="nav-left">
@@ -185,6 +187,12 @@ function Shell() {
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/account" element={<AccountOverview />} />
+          <Route path="/account/profile" element={<Profile />} />
+          <Route path="/account/orders" element={<Orders />} />
+          <Route path="/account/addresses" element={<Addresses />} />
+          <Route path="/account/password" element={<ChangePassword />} />
           <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </main>

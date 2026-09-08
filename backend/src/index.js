@@ -6,6 +6,8 @@ import { fileURLToPath } from "url";
 import productsRouter from "./routes/products.js";
 import searchRouter from "./routes/search.js";
 import authRouter from "./routes/auth.js";
+import userRouter from "./routes/user.js";
+import ordersRouter from "./routes/orders.js";
 import { embeddingProviderName } from "./services/embeddings.js";
 import { getCatalog } from "./data/productStore.js";
 
@@ -22,6 +24,8 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
+app.use("/api/orders", ordersRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/search", searchRouter);
 

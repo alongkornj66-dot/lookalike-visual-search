@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 import { imageUrl } from "../api/client";
 
 function IconClose() {
@@ -21,6 +22,8 @@ function IconPlus() {
 
 export default function CartDrawer({ open, onClose }) {
   const { items, removeItem, updateQty, totalItems, totalPrice } = useCart();
+  const { isLoggedIn } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -84,7 +87,13 @@ export default function CartDrawer({ open, onClose }) {
                 <span>Total</span>
                 <span>฿{(totalPrice + (totalPrice >= 2000 ? 0 : 150)).toLocaleString()}</span>
               </div>
-              <button className="cta-btn" style={{ marginTop: 16 }}>Checkout</button>
+              <button
+                className="cta-btn"
+                style={{ marginTop: 16 }}
+                onClick={() => { onClose(); navigate(isLoggedIn ? "/checkout" : "/login"); }}
+              >
+                {isLoggedIn ? "Proceed to Checkout" : "Sign in to Checkout"}
+              </button>
             </div>
           </>
         )}
