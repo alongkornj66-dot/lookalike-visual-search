@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "name": "Red Everyday Tee",
+    "category": "tshirt",
+    "color": "red",
+    "pattern": "solid",
+    "price": 297,
+    "imageUrl": "/images/tshirt_001.png"
+  },
+  {
+    "id": 2,
+    "name": "Yellow Crew Tee",
+    "category": "tshirt",
+    "color": "yellow",
+    "pattern": "dotted",
+    "price": 248,
+    "imageUrl": "/images/tshirt_002.png"
+  },
+  {
+    "id": 3,
+    "name": "Pink Crew Tee",
+    "category": "tshirt",
+    "color": "pink",
+    "pattern": "solid",
+    "price": 296,
+    "imageUrl": "/images/tshirt_003.png"
+  },
+  {
+    "id": 4,
+    "name": "Beige Crew Tee",
+    "category": "tshirt",
+    "color": "beige",
+    "pattern": "striped",
+    "price": 327,
+    "imageUrl": "/images/tshirt_004.png"
+  },
+  {
+    "id": 5,
+    "name": "Green Summer Dress",
+    "category": "dress",
+    "color": "green",
+    "pattern": "solid",
+    "price": 731,
+    "imageUrl": "/images/dress_005.png"
+  },
+  {
+    "id": 6,
+    "name": "Yellow Sundress",
+    "category": "dress",
+    "color": "yellow",
+    "pattern": "dotted",
+    "price": 777,
+    "imageUrl": "/images/dress_006.png"
+  },
+  {
+    "id": 7,
+    "name": "White Wrap Dress",
+    "category": "dress",
+    "color": "white",
+    "pattern": "solid",
+    "price": 787,
+    "imageUrl": "/images/dress_007.png"
+  },
+  {
+    "id": 8,
+    "name": "Red Runner Sneaker",
+    "category": "shoe",
+    "color": "red",
+    "pattern": "striped",
+    "price": 1337,
+    "imageUrl": "/images/shoe_008.png"
+  },
+  {
+    "id": 9,
+    "name": "Green Canvas Shoe",
+    "category": "shoe",
+    "color": "green",
+    "pattern": "striped",
+    "price": 1293,
+    "imageUrl": "/images/shoe_009.png"
+  },
+  {
+    "id": 10,
+    "name": "Yellow Runner Sneaker",
+    "category": "shoe",
+    "color": "yellow",
+    "pattern": "dotted",
+    "price": 1395,
+    "imageUrl": "/images/shoe_010.png"
+  },
+  {
+    "id": 11,
+    "name": "Black Court Sneaker",
+    "category": "shoe",
+    "color": "black",
+    "pattern": "dotted",
+    "price": 1358,
+    "imageUrl": "/images/shoe_011.png"
+  },
+  {
+    "id": 12,
+    "name": "White Court Sneaker",
+    "category": "shoe",
+    "color": "white",
+    "pattern": "dotted",
+    "price": 1415,
+    "imageUrl": "/images/shoe_012.png"
+  },
+  {
+    "id": 13,
+    "name": "Beige Canvas Shoe",
+    "category": "shoe",
+    "color": "beige",
+    "pattern": "solid",
+    "price": 1342,
+    "imageUrl": "/images/shoe_013.png"
+  },
+  {
+    "id": 14,
+    "name": "Green Mini Bag",
+    "category": "bag",
+    "color": "green",
+    "pattern": "dotted",
+    "price": 941,
+    "imageUrl": "/images/bag_014.png"
+  },
+  {
+    "id": 15,
+    "name": "Yellow Weekender Bag",
+    "category": "bag",
+    "color": "yellow",
+    "pattern": "dotted",
+    "price": 875,
+    "imageUrl": "/images/bag_015.png"
+  },
+  {
+    "id": 16,
+    "name": "White Mini Bag",
+    "category": "bag",
+    "color": "white",
+    "pattern": "striped",
+    "price": 989,
+    "imageUrl": "/images/bag_016.png"
+  },
+  {
+    "id": 17,
+    "name": "Pink Mini Bag",
+    "category": "bag",
+    "color": "pink",
+    "pattern": "solid",
+    "price": 863,
+    "imageUrl": "/images/bag_017.png"
+  },
+  {
+    "id": 18,
+    "name": "Beige Crossbody Bag",
+    "category": "bag",
+    "color": "beige",
+    "pattern": "solid",
+    "price": 1014,
+    "imageUrl": "/images/bag_018.png"
+  },
+  {
+    "id": 19,
+    "name": "Red Beanie",
+    "category": "hat",
+    "color": "red",
+    "pattern": "solid",
+    "price": 435,
+    "imageUrl": "/images/hat_019.png"
+  },
+  {
+    "id": 20,
+    "name": "Green Sun Hat",
+    "category": "hat",
+    "color": "green",
+    "pattern": "solid",
+    "price": 496,
+    "imageUrl": "/images/hat_020.png"
+  },
+  {
+    "id": 21,
+    "name": "Yellow Baseball Cap",
+    "category": "hat",
+    "color": "yellow",
+    "pattern": "solid",
+    "price": 416,
+    "imageUrl": "/images/hat_021.png"
+  },
+  {
+    "id": 22,
+    "name": "White Baseball Cap",
+    "category": "hat",
+    "color": "white",
+    "pattern": "dotted",
+    "price": 429,
+    "imageUrl": "/images/hat_022.png"
+  },
+  {
+    "id": 23,
+    "name": "Pink Baseball Cap",
+    "category": "hat",
+    "color": "pink",
+    "pattern": "dotted",
+    "price": 339,
+    "imageUrl": "/images/hat_023.png"
+  },
+  {
+    "id": 24,
+    "name": "Beige Bucket Hat",
+    "category": "hat",
+    "color": "beige",
+    "pattern": "solid",
+    "price": 453,
+    "imageUrl": "/images/hat_024.png"
+  }
+]
