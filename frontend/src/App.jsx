@@ -21,6 +21,7 @@ import Profile from "./pages/account/Profile";
 import Orders from "./pages/account/Orders";
 import Addresses from "./pages/account/Addresses";
 import ChangePassword from "./pages/account/ChangePassword";
+import Sports from "./pages/Sports";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminOrders from "./pages/admin/Orders";
 import AdminProducts from "./pages/admin/Products";
@@ -144,6 +145,7 @@ function Shell() {
             <NavLink to="/shoes" className={({ isActive }) => isActive ? "active" : ""}>Shoes</NavLink>
             <NavLink to="/bags" className={({ isActive }) => isActive ? "active" : ""}>Bags</NavLink>
             <NavLink to="/accessories" className={({ isActive }) => isActive ? "active" : ""}>Accessories</NavLink>
+            <NavLink to="/sports" className={({ isActive }) => isActive ? "active" : ""}>Sports</NavLink>
           </nav>
 
           <Link to="/" className="nav-brand">LOOKALIKE</Link>
@@ -193,6 +195,7 @@ function Shell() {
           <Route path="/shoes" element={<Home defaultCategory="shoe" />} />
           <Route path="/bags" element={<Home defaultCategory="bag" />} />
           <Route path="/accessories" element={<Home defaultCategory="hat" />} />
+          <Route path="/sports" element={<Sports />} />
           <Route path="/search" element={<Search />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/login" element={<Login />} />
@@ -219,6 +222,7 @@ function Shell() {
             <Link to="/shoes">Shoes</Link>
             <Link to="/bags">Bags</Link>
             <Link to="/accessories">Accessories</Link>
+            <Link to="/sports">Sports</Link>
           </div>
           <div className="footer-col">
             <p className="footer-heading">Help</p>

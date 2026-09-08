@@ -2184,4 +2184,84 @@ main { flex: 1; }
   .catalog-container, .detail-container, .page-inner { padding: 0 16px 60px; }
   .product-grid { grid-template-columns: repeat(2, 1fr); gap: 2px 10px; }
   .nav-left { display: none; }
+  .sports-hero { padding: 48px 16px 32px; }
+  .sports-hero__title { font-size: 2rem; }
+}
+
+/* ── Sports / Jersey Page ── */
+
+.sports-hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+  color: #fff;
+  padding: 72px 48px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sports-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(220,50,50,0.18) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(50,100,220,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.sports-hero__inner { position: relative; z-index: 1; }
+
+.sports-hero__eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 12px;
+}
+
+.sports-hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.sports-hero__sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.sports-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.sports-filter-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--grey-200);
+  background: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--grey-600);
+  cursor: pointer;
+  transition: all 0.15s;
+  border-radius: 2px;
+}
+
+.sports-filter-btn:hover {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.sports-filter-btn.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
 }

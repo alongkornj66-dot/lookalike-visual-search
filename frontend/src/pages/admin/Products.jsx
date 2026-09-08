@@ -4,8 +4,8 @@ import { useToast } from "../../context/ToastContext";
 import { getAdminProducts, createProduct, updateProduct, deleteProduct, receiveStock } from "../../api/admin";
 import AdminLayout from "./Layout";
 
-const CATEGORIES = ["clothing", "shoes", "bags", "accessories"];
-const CAT_MAP = { clothing: ["tshirt", "dress"], shoes: ["shoe"], bags: ["bag"], accessories: ["hat"] };
+const CATEGORIES = ["clothing", "shoes", "bags", "accessories", "sports"];
+const CAT_MAP = { clothing: ["tshirt", "dress"], shoes: ["shoe"], bags: ["bag"], accessories: ["hat"], sports: ["jersey"] };
 const EMPTY = { name: "", price: "", category: "tshirt", imageUrl: "", description: "", stock: "" };
 
 function stockLabel(n) {
@@ -117,7 +117,7 @@ export default function AdminProducts() {
       <div className="admin-toolbar">
         <input className="admin-search-input" placeholder="Search products…" value={search} onChange={(e) => setSearch(e.target.value)} />
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-          {["all", "clothing", "shoes", "bags", "accessories"].map((c) => (
+          {["all", "clothing", "shoes", "bags", "accessories", "sports"].map((c) => (
             <button key={c} className={`admin-filter-btn ${catFilter === c ? "active" : ""}`} onClick={() => setCatFilter(c)}>
               {c.charAt(0).toUpperCase() + c.slice(1)}
             </button>
@@ -271,6 +271,7 @@ export default function AdminProducts() {
                   <option value="shoe">Shoe</option>
                   <option value="bag">Bag</option>
                   <option value="hat">Hat / Accessories</option>
+                  <option value="jersey">Sports / Jersey</option>
                 </select>
               </div>
               <div className="admin-form-row">
