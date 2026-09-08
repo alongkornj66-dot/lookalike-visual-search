@@ -8,14 +8,14 @@ export default function App() {
     <div className="app-shell">
       <header className="top-nav">
         <div className="brand">
-          <span className="brand-mark" />
+          <div className="brand-icon">👗</div>
           Lookalike
         </div>
         <nav className="nav-links">
-          <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
+          <NavLink to="/" end className={({ isActive }) => isActive ? "active" : ""}>
             Catalog
           </NavLink>
-          <NavLink to="/search" className={({ isActive }) => (isActive ? "active" : "")}>
+          <NavLink to="/search" className={({ isActive }) => isActive ? "active" : ""}>
             Visual Search
           </NavLink>
         </nav>
@@ -29,9 +29,8 @@ export default function App() {
         </Routes>
       </main>
 
-      <footer className="footer-note">
-        Visual & Style Search — a demo image-similarity storefront built with React, Express, and a
-        pluggable CLIP embedding backend.
+      <footer className="footer">
+        Visual &amp; Style Search — find anything by photo, not by words.
       </footer>
     </div>
   );

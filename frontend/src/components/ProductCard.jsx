@@ -6,15 +6,25 @@ export default function ProductCard({ product }) {
 
   return (
     <Link className="product-card" to={`/product/${product.id}`}>
-      <img className="product-thumb" src={imageUrl(product.imageUrl)} alt={product.name} loading="lazy" />
-      <div className="product-info">
+      <div className="product-thumb-wrap">
+        <img
+          className="product-thumb"
+          src={imageUrl(product.imageUrl)}
+          alt={product.name}
+          loading="lazy"
+        />
+        <div className="product-overlay" />
         {hasSimilarity && (
-          <span className="similarity-badge">{Math.round(product.similarity * 100)}% match</span>
+          <span className="similarity-badge">
+            {Math.round(product.similarity * 100)}% match
+          </span>
         )}
+      </div>
+      <div className="product-info">
         <p className="product-name">{product.name}</p>
         <div className="product-meta">
-          <span>฿ {product.price.toLocaleString()}</span>
-          <span>{product.category}</span>
+          <span className="product-price">฿{product.price.toLocaleString()}</span>
+          <span className="product-cat-tag">{product.category}</span>
         </div>
       </div>
     </Link>

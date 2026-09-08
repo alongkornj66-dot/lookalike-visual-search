@@ -6,7 +6,7 @@
     "color": "red",
     "pattern": "solid",
     "price": 297,
-    "imageUrl": "/images/tshirt_001.png"
+    "imageUrl": "/images/tshirt_001.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "color": "yellow",
     "pattern": "dotted",
     "price": 248,
-    "imageUrl": "/images/tshirt_002.png"
+    "imageUrl": "/images/tshirt_002.jpg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "color": "pink",
     "pattern": "solid",
     "price": 296,
-    "imageUrl": "/images/tshirt_003.png"
+    "imageUrl": "/images/tshirt_003.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "color": "beige",
     "pattern": "striped",
     "price": 327,
-    "imageUrl": "/images/tshirt_004.png"
+    "imageUrl": "/images/tshirt_004.jpg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "color": "green",
     "pattern": "solid",
     "price": 731,
-    "imageUrl": "/images/dress_005.png"
+    "imageUrl": "/images/dress_005.jpg"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "color": "yellow",
     "pattern": "dotted",
     "price": 777,
-    "imageUrl": "/images/dress_006.png"
+    "imageUrl": "/images/dress_006.jpg"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "color": "white",
     "pattern": "solid",
     "price": 787,
-    "imageUrl": "/images/dress_007.png"
+    "imageUrl": "/images/dress_007.jpg"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "color": "red",
     "pattern": "striped",
     "price": 1337,
-    "imageUrl": "/images/shoe_008.png"
+    "imageUrl": "/images/shoe_008.jpg"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "color": "green",
     "pattern": "striped",
     "price": 1293,
-    "imageUrl": "/images/shoe_009.png"
+    "imageUrl": "/images/shoe_009.jpg"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "color": "yellow",
     "pattern": "dotted",
     "price": 1395,
-    "imageUrl": "/images/shoe_010.png"
+    "imageUrl": "/images/shoe_010.jpg"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "color": "black",
     "pattern": "dotted",
     "price": 1358,
-    "imageUrl": "/images/shoe_011.png"
+    "imageUrl": "/images/shoe_011.jpg"
   },
   {
     "id": 12,
@@ -105,7 +105,7 @@
     "color": "white",
     "pattern": "dotted",
     "price": 1415,
-    "imageUrl": "/images/shoe_012.png"
+    "imageUrl": "/images/shoe_012.jpg"
   },
   {
     "id": 13,
@@ -114,7 +114,7 @@
     "color": "beige",
     "pattern": "solid",
     "price": 1342,
-    "imageUrl": "/images/shoe_013.png"
+    "imageUrl": "/images/shoe_013.jpg"
   },
   {
     "id": 14,
@@ -123,7 +123,7 @@
     "color": "green",
     "pattern": "dotted",
     "price": 941,
-    "imageUrl": "/images/bag_014.png"
+    "imageUrl": "/images/bag_014.jpg"
   },
   {
     "id": 15,
@@ -132,7 +132,7 @@
     "color": "yellow",
     "pattern": "dotted",
     "price": 875,
-    "imageUrl": "/images/bag_015.png"
+    "imageUrl": "/images/bag_015.jpg"
   },
   {
     "id": 16,
@@ -141,7 +141,7 @@
     "color": "white",
     "pattern": "striped",
     "price": 989,
-    "imageUrl": "/images/bag_016.png"
+    "imageUrl": "/images/bag_016.jpg"
   },
   {
     "id": 17,
@@ -150,7 +150,7 @@
     "color": "pink",
     "pattern": "solid",
     "price": 863,
-    "imageUrl": "/images/bag_017.png"
+    "imageUrl": "/images/bag_017.jpg"
   },
   {
     "id": 18,
@@ -159,7 +159,7 @@
     "color": "beige",
     "pattern": "solid",
     "price": 1014,
-    "imageUrl": "/images/bag_018.png"
+    "imageUrl": "/images/bag_018.jpg"
   },
   {
     "id": 19,
@@ -168,7 +168,7 @@
     "color": "red",
     "pattern": "solid",
     "price": 435,
-    "imageUrl": "/images/hat_019.png"
+    "imageUrl": "/images/hat_019.jpg"
   },
   {
     "id": 20,
@@ -177,7 +177,7 @@
     "color": "green",
     "pattern": "solid",
     "price": 496,
-    "imageUrl": "/images/hat_020.png"
+    "imageUrl": "/images/hat_020.jpg"
   },
   {
     "id": 21,
@@ -186,7 +186,7 @@
     "color": "yellow",
     "pattern": "solid",
     "price": 416,
-    "imageUrl": "/images/hat_021.png"
+    "imageUrl": "/images/hat_021.jpg"
   },
   {
     "id": 22,
@@ -195,7 +195,7 @@
     "color": "white",
     "pattern": "dotted",
     "price": 429,
-    "imageUrl": "/images/hat_022.png"
+    "imageUrl": "/images/hat_022.jpg"
   },
   {
     "id": 23,
@@ -204,7 +204,7 @@
     "color": "pink",
     "pattern": "dotted",
     "price": 339,
-    "imageUrl": "/images/hat_023.png"
+    "imageUrl": "/images/hat_023.jpg"
   },
   {
     "id": 24,
@@ -213,6 +213,6 @@
     "color": "beige",
     "pattern": "solid",
     "price": 453,
-    "imageUrl": "/images/hat_024.png"
+    "imageUrl": "/images/hat_024.jpg"
   }
 ]

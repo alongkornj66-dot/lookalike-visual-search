@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fetchProducts } from "../api/client";
+import { fetchProducts, imageUrl } from "../api/client";
 import ProductCard from "../components/ProductCard";
 import CategoryFilter from "../components/CategoryFilter";
+
+const HERO_SLUGS = [
+  "/images/dress_005.jpg",
+  "/images/shoe_008.jpg",
+  "/images/bag_015.jpg",
+];
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -15,28 +21,23 @@ export default function Home() {
     setLoading(true);
     setError(null);
     fetchProducts({ category })
-      .then((data) => {
-        if (!cancelled) setProducts(data.items);
-      })
-      .catch((err) => {
-        if (!cancelled) setError(err.message);
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
+      .then((data) => { if (!cancelled) setProducts(data.items); })
+      .catch((err) => { if (!cancelled) setError(err.message); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
   }, [category]);
 
   return (
     <>
       <section className="hero">
-        <div>
-          <h1>Find it by how it looks, not what it's called</h1>
+        <div className="hero-content">
+          <div className="hero-eyebrow">✦ Visual Fashion Search</div>
+          <h1>
+            Find it by <span>how it looks</span>,<br />not what it's called
+          </h1>
           <p>
-            Upload a photo of something you like and we'll match it to items in the
-            catalog by color and silhouette — no need to know the right search terms.
+            Upload a photo of something you love and we'll match it to the closest
+            items in our catalog — by color, silhouette, and style.
           </p>
           <Link to="/search">
             <button className="btn" type="button">
@@ -44,12 +45,23 @@ export default function Home() {
             </button>
           </Link>
         </div>
-        <div className="hero-visual">🛍️</div>
+
+        <div className="hero-images">
+          {HERO_SLUGS.map((slug, i) => (
+            <img
+              key={i}
+              className="hero-img-stack"
+              src={imageUrl(slug)}
+              alt=""
+              aria-hidden="true"
+            />
+          ))}
+        </div>
       </section>
 
-      <div className="page-header">
-        <h1>Browse the catalog</h1>
-        <p>{products.length} items{category ? ` in ${category}` : ""}</p>
+      <div className="section-header">
+        <h2>Browse catalog</h2>
+        <p>{products.length} items{category ? ` · ${category}` : ""}</p>
       </div>
 
       <CategoryFilter value={category} onChange={setCategory} />
