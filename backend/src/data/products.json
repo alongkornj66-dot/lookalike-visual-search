@@ -1,218 +1,43 @@
 [
-  {
-    "id": 1,
-    "name": "Red Everyday Tee",
-    "category": "tshirt",
-    "color": "red",
-    "pattern": "solid",
-    "price": 297,
-    "imageUrl": "/images/tshirt_001.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Yellow Crew Tee",
-    "category": "tshirt",
-    "color": "yellow",
-    "pattern": "dotted",
-    "price": 248,
-    "imageUrl": "/images/tshirt_002.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Pink Crew Tee",
-    "category": "tshirt",
-    "color": "pink",
-    "pattern": "solid",
-    "price": 296,
-    "imageUrl": "/images/tshirt_003.jpg"
-  },
-  {
-    "id": 4,
-    "name": "Beige Crew Tee",
-    "category": "tshirt",
-    "color": "beige",
-    "pattern": "striped",
-    "price": 327,
-    "imageUrl": "/images/tshirt_004.jpg"
-  },
-  {
-    "id": 5,
-    "name": "Green Summer Dress",
-    "category": "dress",
-    "color": "green",
-    "pattern": "solid",
-    "price": 731,
-    "imageUrl": "/images/dress_005.jpg"
-  },
-  {
-    "id": 6,
-    "name": "Yellow Sundress",
-    "category": "dress",
-    "color": "yellow",
-    "pattern": "dotted",
-    "price": 777,
-    "imageUrl": "/images/dress_006.jpg"
-  },
-  {
-    "id": 7,
-    "name": "White Wrap Dress",
-    "category": "dress",
-    "color": "white",
-    "pattern": "solid",
-    "price": 787,
-    "imageUrl": "/images/dress_007.jpg"
-  },
-  {
-    "id": 8,
-    "name": "Red Runner Sneaker",
-    "category": "shoe",
-    "color": "red",
-    "pattern": "striped",
-    "price": 1337,
-    "imageUrl": "/images/shoe_008.jpg"
-  },
-  {
-    "id": 9,
-    "name": "Green Canvas Shoe",
-    "category": "shoe",
-    "color": "green",
-    "pattern": "striped",
-    "price": 1293,
-    "imageUrl": "/images/shoe_009.jpg"
-  },
-  {
-    "id": 10,
-    "name": "Yellow Runner Sneaker",
-    "category": "shoe",
-    "color": "yellow",
-    "pattern": "dotted",
-    "price": 1395,
-    "imageUrl": "/images/shoe_010.jpg"
-  },
-  {
-    "id": 11,
-    "name": "Black Court Sneaker",
-    "category": "shoe",
-    "color": "black",
-    "pattern": "dotted",
-    "price": 1358,
-    "imageUrl": "/images/shoe_011.jpg"
-  },
-  {
-    "id": 12,
-    "name": "White Court Sneaker",
-    "category": "shoe",
-    "color": "white",
-    "pattern": "dotted",
-    "price": 1415,
-    "imageUrl": "/images/shoe_012.jpg"
-  },
-  {
-    "id": 13,
-    "name": "Beige Canvas Shoe",
-    "category": "shoe",
-    "color": "beige",
-    "pattern": "solid",
-    "price": 1342,
-    "imageUrl": "/images/shoe_013.jpg"
-  },
-  {
-    "id": 14,
-    "name": "Green Mini Bag",
-    "category": "bag",
-    "color": "green",
-    "pattern": "dotted",
-    "price": 941,
-    "imageUrl": "/images/bag_014.jpg"
-  },
-  {
-    "id": 15,
-    "name": "Yellow Weekender Bag",
-    "category": "bag",
-    "color": "yellow",
-    "pattern": "dotted",
-    "price": 875,
-    "imageUrl": "/images/bag_015.jpg"
-  },
-  {
-    "id": 16,
-    "name": "White Mini Bag",
-    "category": "bag",
-    "color": "white",
-    "pattern": "striped",
-    "price": 989,
-    "imageUrl": "/images/bag_016.jpg"
-  },
-  {
-    "id": 17,
-    "name": "Pink Mini Bag",
-    "category": "bag",
-    "color": "pink",
-    "pattern": "solid",
-    "price": 863,
-    "imageUrl": "/images/bag_017.jpg"
-  },
-  {
-    "id": 18,
-    "name": "Beige Crossbody Bag",
-    "category": "bag",
-    "color": "beige",
-    "pattern": "solid",
-    "price": 1014,
-    "imageUrl": "/images/bag_018.jpg"
-  },
-  {
-    "id": 19,
-    "name": "Red Beanie",
-    "category": "hat",
-    "color": "red",
-    "pattern": "solid",
-    "price": 435,
-    "imageUrl": "/images/hat_019.jpg"
-  },
-  {
-    "id": 20,
-    "name": "Green Sun Hat",
-    "category": "hat",
-    "color": "green",
-    "pattern": "solid",
-    "price": 496,
-    "imageUrl": "/images/hat_020.jpg"
-  },
-  {
-    "id": 21,
-    "name": "Yellow Baseball Cap",
-    "category": "hat",
-    "color": "yellow",
-    "pattern": "solid",
-    "price": 416,
-    "imageUrl": "/images/hat_021.jpg"
-  },
-  {
-    "id": 22,
-    "name": "White Baseball Cap",
-    "category": "hat",
-    "color": "white",
-    "pattern": "dotted",
-    "price": 429,
-    "imageUrl": "/images/hat_022.jpg"
-  },
-  {
-    "id": 23,
-    "name": "Pink Baseball Cap",
-    "category": "hat",
-    "color": "pink",
-    "pattern": "dotted",
-    "price": 339,
-    "imageUrl": "/images/hat_023.jpg"
-  },
-  {
-    "id": 24,
-    "name": "Beige Bucket Hat",
-    "category": "hat",
-    "color": "beige",
-    "pattern": "solid",
-    "price": 453,
-    "imageUrl": "/images/hat_024.jpg"
-  }
+  { "id": 1, "name": "Red Everyday Tee", "category": "tshirt", "color": "red", "pattern": "solid", "price": 297, "stock": 42, "imageUrl": "/images/tshirt_001.jpg" },
+  { "id": 2, "name": "Yellow Crew Tee", "category": "tshirt", "color": "yellow", "pattern": "dotted", "price": 248, "stock": 28, "imageUrl": "/images/tshirt_002.jpg" },
+  { "id": 3, "name": "Pink Crew Tee", "category": "tshirt", "color": "pink", "pattern": "solid", "price": 296, "stock": 3, "imageUrl": "/images/tshirt_003.jpg" },
+  { "id": 4, "name": "Beige Crew Tee", "category": "tshirt", "color": "beige", "pattern": "striped", "price": 327, "stock": 15, "imageUrl": "/images/tshirt_004.jpg" },
+  { "id": 5, "name": "Green Summer Dress", "category": "dress", "color": "green", "pattern": "solid", "price": 731, "stock": 8, "imageUrl": "/images/dress_005.jpg" },
+  { "id": 6, "name": "Yellow Sundress", "category": "dress", "color": "yellow", "pattern": "dotted", "price": 777, "stock": 0, "imageUrl": "/images/dress_006.jpg" },
+  { "id": 7, "name": "White Wrap Dress", "category": "dress", "color": "white", "pattern": "solid", "price": 787, "stock": 5, "imageUrl": "/images/dress_007.jpg" },
+  { "id": 8, "name": "Red Runner Sneaker", "category": "shoe", "color": "red", "pattern": "striped", "price": 1337, "stock": 12, "imageUrl": "/images/shoe_008.jpg" },
+  { "id": 9, "name": "Green Canvas Shoe", "category": "shoe", "color": "green", "pattern": "striped", "price": 1293, "stock": 2, "imageUrl": "/images/shoe_009.jpg" },
+  { "id": 10, "name": "Yellow Runner Sneaker", "category": "shoe", "color": "yellow", "pattern": "dotted", "price": 1395, "stock": 7, "imageUrl": "/images/shoe_010.jpg" },
+  { "id": 11, "name": "Black Court Sneaker", "category": "shoe", "color": "black", "pattern": "dotted", "price": 1358, "stock": 20, "imageUrl": "/images/shoe_011.jpg" },
+  { "id": 12, "name": "White Court Sneaker", "category": "shoe", "color": "white", "pattern": "dotted", "price": 1415, "stock": 4, "imageUrl": "/images/shoe_012.jpg" },
+  { "id": 13, "name": "Beige Canvas Shoe", "category": "shoe", "color": "beige", "pattern": "solid", "price": 1342, "stock": 9, "imageUrl": "/images/shoe_013.jpg" },
+  { "id": 14, "name": "Green Mini Bag", "category": "bag", "color": "green", "pattern": "dotted", "price": 941, "stock": 0, "imageUrl": "/images/bag_014.jpg" },
+  { "id": 15, "name": "Yellow Weekender Bag", "category": "bag", "color": "yellow", "pattern": "dotted", "price": 875, "stock": 6, "imageUrl": "/images/bag_015.jpg" },
+  { "id": 16, "name": "White Mini Bag", "category": "bag", "color": "white", "pattern": "striped", "price": 989, "stock": 1, "imageUrl": "/images/bag_016.jpg" },
+  { "id": 17, "name": "Pink Mini Bag", "category": "bag", "color": "pink", "pattern": "solid", "price": 863, "stock": 11, "imageUrl": "/images/bag_017.jpg" },
+  { "id": 18, "name": "Beige Crossbody Bag", "category": "bag", "color": "beige", "pattern": "solid", "price": 1014, "stock": 3, "imageUrl": "/images/bag_018.jpg" },
+  { "id": 19, "name": "Red Beanie", "category": "hat", "color": "red", "pattern": "solid", "price": 435, "stock": 18, "imageUrl": "/images/hat_019.jpg" },
+  { "id": 20, "name": "Green Sun Hat", "category": "hat", "color": "green", "pattern": "solid", "price": 496, "stock": 0, "imageUrl": "/images/hat_020.jpg" },
+  { "id": 21, "name": "Yellow Baseball Cap", "category": "hat", "color": "yellow", "pattern": "solid", "price": 416, "stock": 25, "imageUrl": "/images/hat_021.jpg" },
+  { "id": 22, "name": "White Baseball Cap", "category": "hat", "color": "white", "pattern": "dotted", "price": 429, "stock": 14, "imageUrl": "/images/hat_022.jpg" },
+  { "id": 23, "name": "Pink Baseball Cap", "category": "hat", "color": "pink", "pattern": "dotted", "price": 339, "stock": 2, "imageUrl": "/images/hat_023.jpg" },
+  { "id": 24, "name": "Beige Bucket Hat", "category": "hat", "color": "beige", "pattern": "solid", "price": 453, "stock": 7, "imageUrl": "/images/hat_024.jpg" },
+  { "id": 25, "name": "Arsenal Home Jersey", "category": "tshirt", "color": "red", "pattern": "solid", "price": 1890, "stock": 30, "description": "Classic red and white Adidas Arsenal home jersey. Premium replica quality.", "imageUrl": "https://images.unsplash.com/photo-1577212017184-80cc0da11082?w=600&h=800&fit=crop&q=80" },
+  { "id": 26, "name": "Football Match Jersey #24", "category": "tshirt", "color": "red", "pattern": "solid", "price": 1650, "stock": 22, "description": "Red squad number 24 replica football jersey. Authentic badge and lettering.", "imageUrl": "https://images.unsplash.com/photo-1577212017308-55c4d60d2609?w=600&h=800&fit=crop&q=80" },
+  { "id": 27, "name": "Classic Striped Football Shirt", "category": "tshirt", "color": "red", "pattern": "striped", "price": 1450, "stock": 18, "description": "Vintage-style red and black striped football shirt. Retro club design.", "imageUrl": "https://images.unsplash.com/photo-1616124619460-ff4ed8f4683c?w=600&h=800&fit=crop&q=80" },
+  { "id": 28, "name": "Nike Training Jersey Yellow", "category": "tshirt", "color": "yellow", "pattern": "solid", "price": 1380, "stock": 5, "description": "Yellow and green Nike Dri-FIT training jersey. Perfect for match and practice.", "imageUrl": "https://images.unsplash.com/photo-1552066379-e7bfd22155c5?w=600&h=800&fit=crop&q=80" },
+  { "id": 29, "name": "Athletic Stripe Training Top", "category": "tshirt", "color": "blue", "pattern": "striped", "price": 1290, "stock": 0, "description": "Blue and red striped athletic training top. Breathable mesh construction.", "imageUrl": "https://images.unsplash.com/photo-1662096909714-e2f206d0a636?w=600&h=800&fit=crop&q=80" },
+  { "id": 30, "name": "Pro Tracksuit Training Top", "category": "tshirt", "color": "black", "pattern": "solid", "price": 1750, "stock": 14, "description": "Professional full-zip tracksuit training top. Moisture-wicking performance fabric.", "imageUrl": "https://images.unsplash.com/photo-1593419528756-3cdfa1615b86?w=600&h=800&fit=crop&q=80" },
+  { "id": 31, "name": "Football Club Match Shirt", "category": "tshirt", "color": "white", "pattern": "solid", "price": 1580, "stock": 8, "description": "Official-style match day football shirt. Lightweight woven fabric.", "imageUrl": "https://images.unsplash.com/photo-1649520937981-763d6a14de7d?w=600&h=800&fit=crop&q=80" },
+  { "id": 32, "name": "Vintage Home Kit Shirt", "category": "tshirt", "color": "white", "pattern": "solid", "price": 1420, "stock": 3, "description": "Classic vintage football home kit jersey. Authentic retro stitching and badge.", "imageUrl": "https://images.unsplash.com/photo-1738091063217-1f59463342c9?w=600&h=800&fit=crop&q=80" },
+  { "id": 33, "name": "Squad Jersey Number 16", "category": "tshirt", "color": "blue", "pattern": "solid", "price": 1360, "stock": 19, "description": "Football squad jersey featuring printed number 16. Premium polyester fabric.", "imageUrl": "https://images.unsplash.com/photo-1693683224122-0a8e206f248d?w=600&h=800&fit=crop&q=80" },
+  { "id": 34, "name": "Club Training Shirt", "category": "tshirt", "color": "red", "pattern": "solid", "price": 1490, "stock": 1, "description": "Lightweight club training shirt with breathable mesh panel inserts.", "imageUrl": "https://images.unsplash.com/photo-1655089131279-8029e8a21ac6?w=600&h=800&fit=crop&q=80" },
+  { "id": 35, "name": "Performance Athletic Jersey", "category": "tshirt", "color": "green", "pattern": "solid", "price": 1320, "stock": 11, "description": "High-performance athletic jersey for match play and intense training sessions.", "imageUrl": "https://images.unsplash.com/photo-1551479460-5e76c686816a?w=600&h=800&fit=crop&q=80" },
+  { "id": 36, "name": "Adidas Team Warm-Up Shirt", "category": "tshirt", "color": "red", "pattern": "solid", "price": 1595, "stock": 16, "description": "Red and yellow Adidas team warm-up shirt. Squad uniform design for pre-match.", "imageUrl": "https://images.unsplash.com/photo-1551854321-1432edd90a5c?w=600&h=800&fit=crop&q=80" },
+  { "id": 37, "name": "Pro Sports Performance Tee", "category": "tshirt", "color": "black", "pattern": "solid", "price": 1240, "stock": 0, "description": "Professional sports performance tee engineered for training and competition.", "imageUrl": "https://plus.unsplash.com/premium_photo-1664297943340-e7fcb94726bb?w=600&h=800&fit=crop&q=80" },
+  { "id": 38, "name": "Athletic Activewear Top", "category": "tshirt", "color": "white", "pattern": "solid", "price": 1180, "stock": 4, "description": "Clean cut athletic activewear top. Versatile for gym, studio and outdoor sports.", "imageUrl": "https://plus.unsplash.com/premium_photo-1664537975122-9c598d85816e?w=600&h=800&fit=crop&q=80" },
+  { "id": 39, "name": "Running Athletic Top", "category": "tshirt", "color": "blue", "pattern": "solid", "price": 1150, "stock": 24, "description": "Lightweight running top with four-way stretch and moisture management technology.", "imageUrl": "https://plus.unsplash.com/premium_photo-1706830553449-34072101c746?w=600&h=800&fit=crop&q=80" },
+  { "id": 40, "name": "Sport Warm-Up Track Jacket", "category": "tshirt", "color": "grey", "pattern": "solid", "price": 1680, "stock": 6, "description": "Full-zip sport track jacket for warm-up and cool-down. Team uniform ready.", "imageUrl": "https://plus.unsplash.com/premium_photo-1664303119944-4cf5302bb701?w=600&h=800&fit=crop&q=80" },
+  { "id": 41, "name": "Football Match Day Kit", "category": "tshirt", "color": "white", "pattern": "solid", "price": 1820, "stock": 2, "description": "Official-style football match day playing kit with heat-transferred numbers.", "imageUrl": "https://plus.unsplash.com/premium_photo-1664304736989-96fc282fc672?w=600&h=800&fit=crop&q=80" }
 ]

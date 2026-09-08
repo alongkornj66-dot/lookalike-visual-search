@@ -21,6 +21,10 @@ import Profile from "./pages/account/Profile";
 import Orders from "./pages/account/Orders";
 import Addresses from "./pages/account/Addresses";
 import ChangePassword from "./pages/account/ChangePassword";
+import AdminDashboard from "./pages/admin/Dashboard";
+import AdminOrders from "./pages/admin/Orders";
+import AdminProducts from "./pages/admin/Products";
+import AdminUsers from "./pages/admin/Users";
 
 /* ── SVG Icons ── */
 const IconSearch = () => (
@@ -91,9 +95,15 @@ function UserMenu() {
             <p className="user-dropdown__email">{user.email}</p>
           </div>
           <div className="user-dropdown__divider" />
+          <Link to="/account" className="user-dropdown__item" onClick={() => setOpen(false)}>My Account</Link>
+          <Link to="/account/orders" className="user-dropdown__item" onClick={() => setOpen(false)}>My Orders</Link>
           <Link to="/wishlist" className="user-dropdown__item" onClick={() => setOpen(false)}>Saved Items</Link>
-          <a href="#" className="user-dropdown__item">My Orders</a>
-          <a href="#" className="user-dropdown__item">Account Settings</a>
+          {user.isAdmin && (
+            <>
+              <div className="user-dropdown__divider" />
+              <Link to="/admin" className="user-dropdown__item user-dropdown__item--admin" onClick={() => setOpen(false)}>Admin Panel</Link>
+            </>
+          )}
           <div className="user-dropdown__divider" />
           <button
             className="user-dropdown__item user-dropdown__item--red"
@@ -107,7 +117,7 @@ function UserMenu() {
   );
 }
 
-/* ── Main Shell ── */
+/* ── Store Shell (nav + footer) ── */
 function Shell() {
   const { totalItems } = useCart();
   const { count: wishlistCount } = useWishlist();
@@ -234,13 +244,26 @@ function Shell() {
   );
 }
 
+/* ── Root Router — admin bypasses Shell ── */
+function RootRouter() {
+  return (
+    <Routes>
+      <Route path="/admin" element={<AdminDashboard />} />
+      <Route path="/admin/orders" element={<AdminOrders />} />
+      <Route path="/admin/products" element={<AdminProducts />} />
+      <Route path="/admin/users" element={<AdminUsers />} />
+      <Route path="/*" element={<Shell />} />
+    </Routes>
+  );
+}
+
 export default function App() {
   return (
     <AuthProvider>
       <CartProvider>
         <WishlistProvider>
           <ToastProvider>
-            <Shell />
+            <RootRouter />
           </ToastProvider>
         </WishlistProvider>
       </CartProvider>

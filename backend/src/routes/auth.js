@@ -23,9 +23,23 @@ function writeUsers(users) {
   fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
 }
 
+function isAdminEmail(email) {
+  const admins = (process.env.ADMIN_EMAIL || "").split(",").map((e) => e.trim().toLowerCase());
+  return admins.includes(email.toLowerCase());
+}
+
 function makeToken(user) {
-  return jwt.sign({ id: user.id, email: user.email, name: user.name }, JWT_SECRET, {
-    expiresIn: JWT_EXPIRES,
+  return jwt.sign(
+    { id: user.id, email: user.email, name: user.name, isAdmin: isAdminEmail(user.email) },
+    JWT_SECRET,
+    { expiresIn: JWT_EXPIRES }
+  );
+}
+
+export function requireAdmin(req, res, next) {
+  requireAuth(req, res, () => {
+    if (!req.user.isAdmin) return res.status(403).json({ error: "Admin access required." });
+    next();
   });
 }
 
@@ -85,7 +99,7 @@ router.post("/login", async (req, res, next) => {
 
 // GET /api/auth/me
 router.get("/me", requireAuth, (req, res) => {
-  res.json({ user: req.user });
+  res.json({ user: { ...req.user, isAdmin: isAdminEmail(req.user.email) } });
 });
 
 export default router;
