@@ -4,16 +4,16 @@ const CATEGORIES = [
   { value: "dress", label: "Dresses" },
   { value: "shoe", label: "Shoes" },
   { value: "bag", label: "Bags" },
-  { value: "hat", label: "Hats" },
+  { value: "hat", label: "Accessories" },
 ];
 
 export default function CategoryFilter({ value, onChange }) {
   return (
-    <div className="filter-row">
+    <div className="filter-tabs">
       {CATEGORIES.map((cat) => (
         <button
           key={cat.value || "all"}
-          className={`filter-pill ${value === cat.value ? "active" : ""}`}
+          className={`filter-tab ${value === cat.value ? "active" : ""}`}
           onClick={() => onChange(cat.value)}
           type="button"
         >

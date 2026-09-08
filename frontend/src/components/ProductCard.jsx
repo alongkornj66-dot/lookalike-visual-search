@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import { imageUrl } from "../api/client";
 
+function IconHeart() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+    </svg>
+  );
+}
+
 export default function ProductCard({ product }) {
   const hasSimilarity = typeof product.similarity === "number";
 
@@ -13,19 +21,24 @@ export default function ProductCard({ product }) {
           alt={product.name}
           loading="lazy"
         />
-        <div className="product-overlay" />
+        <button
+          className="wishlist-btn"
+          type="button"
+          onClick={(e) => e.preventDefault()}
+          title="Save to wishlist"
+        >
+          <IconHeart />
+        </button>
         {hasSimilarity && (
-          <span className="similarity-badge">
+          <div className="similarity-badge">
             {Math.round(product.similarity * 100)}% match
-          </span>
+          </div>
         )}
       </div>
       <div className="product-info">
+        <p className="product-category-label">{product.category}</p>
         <p className="product-name">{product.name}</p>
-        <div className="product-meta">
-          <span className="product-price">฿{product.price.toLocaleString()}</span>
-          <span className="product-cat-tag">{product.category}</span>
-        </div>
+        <p className="product-price">฿{product.price.toLocaleString()}</p>
       </div>
     </Link>
   );

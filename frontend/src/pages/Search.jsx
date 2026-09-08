@@ -11,7 +11,6 @@ export default function Search() {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [category, setCategory] = useState("");
   const [results, setResults] = useState(null);
-  const [provider, setProvider] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const ranOnceForSeedFile = useRef(false);
@@ -24,7 +23,6 @@ export default function Search() {
     try {
       const data = await searchByImage(selectedFile, { category: cat });
       setResults(data.results);
-      setProvider(data.provider);
     } catch (err) {
       setError(err.message);
       setResults(null);
@@ -33,8 +31,6 @@ export default function Search() {
     }
   };
 
-  // Support arriving here from a product page's "Find similar styles" button,
-  // which passes the source image as a File via router state.
   useEffect(() => {
     const seedFile = location.state?.seedFile;
     if (seedFile && !ranOnceForSeedFile.current) {
@@ -50,43 +46,37 @@ export default function Search() {
   };
 
   return (
-    <>
-      <div className="page-header">
-        <h1>Visual search</h1>
-        <p>Upload a photo and we'll rank the catalog by how visually similar each item is.</p>
+    <div className="page-inner">
+      <div className="search-header">
+        <h1>Shop by Photo</h1>
+        <p>Upload an image and we will find visually similar products in our catalog.</p>
       </div>
 
       <ImageUploader onFileSelected={(f) => runSearch(f, category)} />
 
       {previewUrl && (
         <div className="preview-row">
-          <img src={previewUrl} alt="Search query" />
+          <img src={previewUrl} alt="Uploaded" />
           <div className="preview-meta">
-            <p>Searching with this image{provider ? ` · embedding provider: ${provider}` : ""}</p>
+            <p>Showing results for your photo</p>
             <CategoryFilter value={category} onChange={handleCategoryChange} />
           </div>
         </div>
       )}
 
-      {error && <div className="status-banner error">Search failed: {error}</div>}
+      {error && <div className="status-banner error">{error}</div>}
 
       {loading && (
-        <div className="loading-row">
-          <span className="spinner" /> Comparing against the catalog…
-        </div>
+        <div className="loading-row"><span className="spinner" /> Searching catalog…</div>
       )}
 
       {!loading && results && (
-        results.length === 0 ? (
-          <div className="empty-state">No matches found — try a different photo or category.</div>
-        ) : (
-          <div className="product-grid">
-            {results.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
-        )
+        results.length === 0
+          ? <div className="empty-state">No matches found. Try a different photo or category.</div>
+          : <div className="product-grid" style={{ marginTop: 32 }}>
+              {results.map((p) => <ProductCard key={p.id} product={p} />)}
+            </div>
       )}
-    </>
+    </div>
   );
 }

@@ -33,41 +33,71 @@ export default function ProductDetail() {
   };
 
   if (error) {
-    return <div className="status-banner error">Couldn't load this product: {String(error.message || error)}</div>;
+    return (
+      <div className="detail-container">
+        <div className="status-banner error">Could not load this product.</div>
+      </div>
+    );
   }
 
   if (!product) {
     return (
-      <div className="loading-row">
-        <span className="spinner" /> Loading product…
+      <div className="detail-container">
+        <div className="loading-row"><span className="spinner" /> Loading…</div>
       </div>
     );
   }
 
   return (
-    <>
-      <Link className="back-link" to="/">← Back to catalog</Link>
+    <div className="detail-container">
+      <div className="breadcrumb">
+        <Link to="/">Home</Link>
+        <span>/</span>
+        <Link to={`/?cat=${product.category}`}>{product.category}</Link>
+        <span>/</span>
+        <span style={{ color: "var(--black)" }}>{product.name}</span>
+      </div>
+
       <div className="detail-layout">
-        <div className="detail-image-wrap">
-          <img className="detail-image" src={imageUrl(product.imageUrl)} alt={product.name} />
+        <div className="detail-images">
+          <img
+            className="detail-main-image"
+            src={imageUrl(product.imageUrl)}
+            alt={product.name}
+          />
         </div>
+
         <div className="detail-info">
-          <span className="detail-category">{product.category}</span>
+          <p className="detail-category-label">{product.category}</p>
           <h1 className="detail-name">{product.name}</h1>
-          <div className="detail-price">฿{product.price.toLocaleString()}</div>
+          <p className="detail-price">฿{product.price.toLocaleString()}</p>
+
           <div className="detail-attrs">
-            <div className="detail-attr">
-              Color: <strong>{product.color}</strong>
+            <div className="detail-attr-row">
+              <span className="detail-attr-label">Color</span>
+              <span className="detail-attr-val">{product.color}</span>
             </div>
-            <div className="detail-attr">
-              Pattern: <strong>{product.pattern}</strong>
+            <div className="detail-attr-row">
+              <span className="detail-attr-label">Pattern</span>
+              <span className="detail-attr-val">{product.pattern}</span>
+            </div>
+            <div className="detail-attr-row">
+              <span className="detail-attr-label">Category</span>
+              <span className="detail-attr-val">{product.category}</span>
             </div>
           </div>
-          <button className="btn" type="button" onClick={handleFindSimilar} disabled={findingSimilar}>
-            {findingSimilar ? "Loading…" : "🔍 Find similar styles"}
+
+          <button className="cta-btn" type="button">Add to Cart</button>
+          <button
+            className="cta-btn outline"
+            type="button"
+            onClick={handleFindSimilar}
+            disabled={findingSimilar}
+          >
+            {findingSimilar ? "Loading…" : "Find Similar Styles"}
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
